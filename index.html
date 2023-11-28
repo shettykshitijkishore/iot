@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
+rel="stylesheet"
+/>
+    <!-- <link rel="stylesheets" type="text/css" href="mainpage.css"> -->
+    <style>
+   body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .navbar-light .navbar-nav .nav-link {
+  color: #000;
+}
+        h1, h2, h3 {
+            text-align: left;
+            color: #0066cc;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .main-header
+        {
+          font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-mdb-toggle="collapse"
+    data-mdb-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center mb-3">
+        <a class="navbar-brand" href="#"
+        ><p><b><h1 class="main-header"><center>KEYWORD RECOGNITION USING EDGE IMPULSE</center></h1></b></p>
+    </a>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav align-items-center mx-auto">
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#IMPLEMENTATION">Implentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#Download">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#Results">Results</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
+    <p><h1><center>KEYWORD RECOGNITION USING EDGE IMPULSE</center></h1></p>
+<p><strong><h2>INTRODUCTION</h2></strong></p>
+<p>This project presents the development of an Internet of Things (IoT) solution for text-to-speech conversion using the MAX4466 sensor and ESP32 development kit. The system leverages Edge Impulse for machine learning, enabling real-time and edge-based processing of input text to generate corresponding speech output. The MAX4466 microphone sensor captures the textual input, which is then processed by the ESP32 microcontroller running the Edge Impulse machine learning model.</p>
+<br><p><strong><h2>TOOLS</h2></strong></p>
+<p><strong><img src="esp32.jpg" alt="esp32" width="300" height="300" /></strong>
+<strong><img src="voicesensor.jpg" alt="voicesensor" width="300" height="300" /></strong></p>
+<p><strong><img src="breadboard.jpg" alt="breadboard" width="300" height="300" /></strong>
+<strong><img src="resistor.jpg" alt="resistor" width="300" height="300" /></strong>
+<strong><img src="ledbulb.jpg" alt="ledbulb" width="300" height="300" /></strong></p>
+
+<p> </p>
+<p> </p>
+
+<p><strong> Hardware needed for this project are:</strong></p>
+<div id="IMPLEMENTATION">
+<ul>
+<li>MAX4466 Sensor</li>
+<li>ESP32 development kit</li>
+<li>Breadboard</li>
+<li>RESISTORS</li>
+<li>LED</li>
+</ul><br>
+
+<p><strong><h2>IMPLEMENTATION</h2></strong></p>
+<p><strong><img src="circuit diagram.jpg" alt="circuit" width="750" height="450" /></strong></p>
+<ul>
+<li>VCC (MAX4466) to 3.3V (ESP32) or 5V (ESP32 can handle both)</li>
+<li>GND (MAX4466) to GND (ESP32)</li>
+<li>OUT (MAX4466) to an analog pin (e.g., GPIO pin) on the ESP32 (make sure to use the appropriate pin that supports analog input)</li>
+<li>D12 and D13(ESP32) to positive terminal of LED’s</li>
+</ul><br>
+<p><strong><h2>SOFTWARE</h2></strong></p>
+<p><strong>The software needed for this project are:</strong></p>
+<p><u><strong>Edge IMPULSE</strong></u></p>
+<p>For the machine learning component of our text-to-speech conversion project, we harnessed the capabilities of edge impulse, a comprehensive development platform tailored for deploying machine learning models on edge devices. Edge impulse facilitated a streamlined and accessible workflow, allowing us to navigate through crucial stages of the machine learning lifecycle.</p>
+
+<br><p><strong><h2>WORKING</h2></strong></p><div id="Download"></div>
+<p>The project involves continuously sampling audio input from the MAX4466 microphone. During this process, the red LED indicates that the system is actively listening. When the system recognizes the specific keyword, the green LED lights up, signalling successful recognition. This system allows for hands-free keyword recognition, enabling subsequent actions or commands based on the identified keyword.</p>
+<br><p><strong><h2>LIBRARY AND CODE</h2></strong></p>
+<p><strong>Library:</strong></p>
+<p>The Edge Impulse library is a powerful tool that facilitates the development and deployment of machine learning models, specifically for edge devices such as microcontrollers, sensors, and other low-power devices</p>
+<p><a href="https://docs.edgeimpulse.com/docs/run-inference/arduino-library">https://docs.edgeimpulse.com/docs/run-inference/arduino-library</a></p>
+<p><strong>Code:</strong></p>
+<p><a href="https://github.com/shettykshitijkishore/IOT_MINIPROJECT">https://github.com/shettykshitijkishore/IOT_MINIPROJECT</a></p>
+<p><strong>Integration of code and library:</strong></p>
+<p>Refer to the official edge impulse documentation to integrate the edge impulse and get solution to you other queries as well</p>
+<p><a href="https://docs.edgeimpulse.com/docs/run-inference/arduino-library">Arduino library - Edge Impulse Documentation</a></p>
+<br><p><strong><h2>BLYNK</h2></strong></p>
+<p><h3>1. Install Blynk App:</h3>
+    <ul>
+    <li>Download and install the Blynk app from the App Store (iOS) or Google Play Store (Android).</li>
+    </ul>
+    <h3>2. Create a Blynk Account:</h3>
+    <ul>
+    <li>Open the app and create a Blynk account.</li>
+    </ul>
+    <h3>3. Create a New Project:</h3>
+    <ul>
+    <li>Tap on the "+" icon to create a new project.</li>
+    <li>Select the hardware model you are using (e.g., Arduino, Raspberry Pi, ESP8266, etc.).</li>
+    </ul>
+    <h3>4. Obtain an Auth Token:</h3>
+    <ul>
+    <li>After creating a project, an authentication token (Auth Token) will be sent to your email. Note this token; you'll need it to connect your hardware to the Blynk server.</li>
+    </ul>
+    <h3>5. Add Widgets to Your Project:</h3>
+    <ul>
+    <li>Once the project is created, you'll see a blank canvas.</li>
+    <li>Tap on the canvas to add widgets (buttons, sliders, displays, etc.) that correspond to the functionality you want to control on your hardware.</li>
+    </ul>
+    <h3>6. Configure Your Hardware and Code:</h3>
+    <ul>
+    <li>In your code editor (Arduino IDE, PlatformIO, etc.), use the Blynk library and follow the documentation specific to your hardware.</li>
+    <li>Include the Blynk library in your code and use the Auth Token obtained earlier to establish a connection with the Blynk server.</li>
+    <li>Initialize your hardware and link the specific pins or functions to the widgets you added in the Blynk app.</li>
+    </ul>
+    <h3>7. Upload Code to Your Hardware:</h3>
+    <ul>
+    <li>Compile your code and upload it to your hardware board (Arduino, Raspberry Pi, etc.).</li>
+    </ul>
+    <h3>8. Run the Blynk App:</h3>
+    <ul>
+    <li>Open the Blynk app on your smartphone.</li>
+    <li>Tap the play button at the top-right to start the project.</li><div id="Results"></div>
+    </ul>
+    <h3>9. Monitor and Control:</h3>
+    <ul>
+    <li>Your hardware should now be connected to the Blynk app.</li>
+    <li>Monitor and control the hardware's functions through the widgets you added in the Blynk app.</li>
+    </ul></p><br></div>
+<p><strong><h2>FINAL PROJECT AND RESULTS</h2></strong></p>
+<p><strong><img src="finalres1.jpg" alt="finalres1" width="450" height="300" /></strong></p><br>
+<!-- <p><strong><img src="finalres2.jpg" alt="finalres2" width="450" height="300" /></strong></p> -->
+<br><p><strong><h2>BLYNK APP OUTPUT</h2></strong></p>
+<p><strong><img src="output.jpg" alt="output" width="300" height="600" /></strong></p>
+
+</body>
+</html>
